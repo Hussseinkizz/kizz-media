@@ -1,0 +1,229 @@
+/* Anything we're currently missing in our serato framework goes here! */
+.width-full {
+  min-width: 100%;
+}
+
+.herobar {
+  height: 12.5rem;
+  width: auto;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 50;
+}
+
+.herobar-actions {
+  position: absolute;
+  top: 50%;
+  z-index: 100 !important;
+  width: 100%;
+}
+
+.container-art {
+  max-width: 100%;
+  position: relative;
+}
+
+.background-art {
+  min-height: 12.5rem !important;
+  max-width: 100% !important;
+  object-fit: cover;
+  bottom: auto !important;
+}
+
+/* custom header styles start */
+.header {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  opacity: 0.95;
+  position: fixed;
+  min-width: 100%;
+  top: 0 !important;
+  z-index: 1000;
+}
+.navbar {
+  display: flex;
+  flex: 1;
+  gap: 1.5rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+}
+.navbar-start,
+.navbar-end {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+a.navbar-link {
+  font-style: normal !important;
+  color: currentColor;
+}
+a.navbar-link:hover {
+  text-decoration: none !important;
+}
+
+.navbar-brand {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-items {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-logo {
+  width: clamp(28px, 32px, 72px);
+  height: auto;
+  aspect-ratio: auto;
+}
+
+.font-size-icon {
+  font-size: 1.6rem !important;
+}
+
+.cards-grid {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+
+.main {
+  min-height: 100vh;
+  min-width: 100%;
+  padding-bottom: 12rem !important;
+}
+
+/* cards on mobile */
+.cards-grid {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  padding: 1rem 6vw;
+}
+
+.card {
+  width: 280px !important;
+  padding: 1rem !important;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  flex: 1 1 100%;
+  justify-content: space-between;
+  max-width: 100%;
+  aspect-ratio: auto;
+}
+
+/* .card-content {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .card-media {
+  height: 22rem;
+  max-width: 100%;
+  width: 100%;
+} */
+
+.card-image {
+  height: 22rem;
+  object-fit: cover;
+  max-width: 100%;
+  aspect-ratio: auto;
+}
+
+.nav-link {
+  color: #fff !important;
+}
+
+.nav-link:hover,
+.nav-link:active,
+.nav-link:focus {
+  color: rgb(187, 187, 187) !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease-in;
+}
+
+/* Add opacity helpers */
+.image-link {
+  opacity: 1;
+}
+
+.image-link:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s ease-in;
+}
+
+/* fix */
+.appbar-nav-item {
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.list li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+/* we should be able to change button colors easily! */
+button,
+.button-danger,
+.amazon {
+  color: black !important;
+}
+
+/* .product-page {
+  flex-direction: column;
+} */
+
+/* things on tablet */
+@media (min-width: 568px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 2fr);
+  }
+
+  .product-page > .container {
+    max-width: 50%;
+  }
+}
+
+/* things on wide screens and above */
+@media (min-width: 1200px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+/* flex is missing gap helpers, add full-width buttons, add amazon-brand colors, color-gray is missing, add input stlye helpers */
+/* Should be include rensponsive padding and margin which uses vh & vw units eg. page title padding */
+/* Should be able to set bg & color for hover state */
+/* We could do like background-gray-500-hoverable to make the color simuate hover effects on hover on element */
+/* @media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+} */
