@@ -1,4 +1,26 @@
 /* Anything we're currently missing in our serato framework goes here! */
+
+:root {
+  --background-color: #000000;
+  --containers-color: hsl(0deg 0% 10%);
+  --surface2-color: hsl(0deg 0% 2%);
+  --surface3-color: hsl(0deg 0% 3%);
+  --surface4-color: hsl(0deg 0% 4%);
+  --res-spacer: 2vw;
+}
+
+header, footer {
+  background: var(--surface4-color);
+}
+
+.search-icon {
+  font-size: 1.85rem;
+}
+
+.padding-top-25 {
+  padding-top: 25vh;
+}
+
 .width-full {
   min-width: 100%;
 }
@@ -16,6 +38,14 @@
   top: 50%;
   z-index: 100 !important;
   width: 100%;
+}
+
+#searchBar {
+  border: 1px solid transparent;
+  transition: border 0.3s ease;
+}
+#searchBar:hover, #searchBar:focus {
+  border: 1px solid #80e220;
 }
 
 .container-art {
@@ -118,6 +148,7 @@ a.navbar-link:hover {
 .card {
   width: 280px !important;
   padding: 1rem !important;
+  background: var(--containers-color);
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -195,26 +226,145 @@ button,
   color: black !important;
 }
 
+/* Media Scoller Styles */
+.media-scroller {
+  display: grid;
+  gap: var(--res-spacer);
+  grid-auto-flow: column;
+  grid-auto-columns: 88%;
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  padding: 0 var(--res-spacer) var(--res-spacer);
+}
+
+.media-item {
+  padding: 0.5rem;
+  background: var(--containers-color);
+  border-radius: 4px;
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: min-content;
+  /* add some shadows */
+}
+
+img.media-item-image {
+  inline-size: 100% !important;
+  aspect-ratio: 16/9 !important;
+  object-fit: cover !important;
+}
+
+.snaps-inline {
+  scroll-behavior: smooth;
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: var(--res-spacer);
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
+}
+
+/* mobile first */
+.main-grid {
+  margin: auto var(--res-spacer);
+  display: grid;
+  gap: var(--res-spacer);
+  grid-template-columns: repeat(2, auto);
+}
+
+.artist-card {
+  padding: 0.5rem;
+  background: var(--containers-color);
+  border-radius: 4px;
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: min-content;
+  /* add some shadows */
+}
+
+img.artist-card-image {
+  inline-size: 100% !important;
+  aspect-ratio: 1/2 !important;
+  object-fit: cover !important;
+}
+
+/* mobile first */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* mobile first */
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
 /* .product-page {
   flex-direction: column;
 } */
+
+/* things on extra small devices */
+/* @media (min-width: 768px) {
+  .main-grid {
+  margin: auto var(--res-spacer);
+  display: grid;
+  gap: var(--res-spacer);
+  grid-template-columns: repeat(auto-fit,minmax(25vw, 1fr));
+}
+} */
+
 
 /* things on tablet */
 @media (min-width: 568px) {
   .cards-grid {
     grid-template-columns: repeat(2, 2fr);
   }
-
-  .product-page > .container {
-    max-width: 50%;
+  .media-scroller {
+  grid-auto-columns: 28%;
   }
+
+  .main-grid {
+  margin: auto var(--res-spacer);
+  display: grid;
+  gap: var(--res-spacer);
+  grid-template-columns: repeat(3, minmax(25vw, 1fr));
+  /* grid-template-columns: repeat(auto-fit,minmax(25vw, 1fr)); */
 }
+
+}
+
+/* @media (min-width: 768px) {
+  .main-grid {
+  margin: auto var(--res-spacer);
+  display: grid;
+  gap: var(--res-spacer);
+  grid-template-columns: repeat(auto-fit,minmax(25vw, 1fr));
+}
+} */
 
 /* things on wide screens and above */
 @media (min-width: 1200px) {
   .cards-grid {
     grid-template-columns: repeat(3, auto);
   }
+  .media-scroller {
+  grid-auto-columns: 21%;
+  }
+
+  .main-grid {
+  margin: auto var(--res-spacer);
+  display: grid;
+  gap: var(--res-spacer);
+  grid-template-columns: repeat(auto-fit,minmax(15vw, 1fr));
+}
+
 }
 
 /* flex is missing gap helpers, add full-width buttons, add amazon-brand colors, color-gray is missing, add input stlye helpers */

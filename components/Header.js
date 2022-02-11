@@ -5,7 +5,7 @@ import * as IoIcons from 'react-icons/io5';
 
 const Header = () => {
   return (
-    <header className="header background-gray-900 color-yellow">
+    <header className="header color-yellow">
       <nav className="navbar">
         <div className="navbar-start">
           <div className="navbar-brand">
@@ -17,7 +17,7 @@ const Header = () => {
               height="32"
             /> */}
             <Link href="/">
-              <a className="navbar-link">Kizz Media</a>
+              <a className="navbar-link color-yellow--hoverable">Kizz Media</a>
             </Link>
           </div>
         </div>

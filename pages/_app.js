@@ -1,4 +1,4 @@
-import '../styles/serato-v1-0-3.min.css';
+import 'serato-css/serato.css';
 import '../styles/globals.css';
 import Layout from '../components/Layout.js';
 

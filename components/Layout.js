@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
     <>
       <Meta />
       {/* Using a custom layout */}
-      <div className="app">
+      <div className="app width-full height-viewport background-black color-white">
         <Header />
         <main className="main">{children}</main>
         <Footer />

@@ -6,7 +6,7 @@ const ProfileCard = ({ artist }) => {
   const { latestSong, name, photo, username } = artist;
 
   return (
-    <div className="card">
+    <div className="card background-gray-800 color-white">
       <div className="card-media">
         {/* card image & artist profile link */}
         <Link href={`/artist/${username}`}>
