@@ -22,7 +22,7 @@ const SearchBar = ({ processQuery }) => {
     <form
       className="flex-row justify-content-center align-items-center"
       onSubmit={onSubmitHandler}
-      autocomplete="on"
+      autoComplete="on"
     >
       <input
         type="search"
